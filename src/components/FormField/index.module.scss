@@ -1,0 +1,35 @@
+@use "../../styles/_colors" as *;
+
+.field {
+  &__wrap {
+    padding: 16px 20px;
+    width: 100%;
+    position: relative;
+
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      outline: none;
+      border: 1px solid $field__border;
+      height: 52px;
+      border-radius: 12px;
+      padding: 0 20px;
+    }
+  }
+
+  &__error {
+    input {
+      border: 1px solid red;
+    }
+  }
+}
+.error__message {
+  position: absolute;
+  bottom: -10px;
+  color: red;
+}

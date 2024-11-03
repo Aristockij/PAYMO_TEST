@@ -1,0 +1,68 @@
+@use "../../styles/_colors" as *;
+
+.form {
+  &__wrap {
+    background: $form__bg;
+    border-radius: 24px;
+    padding: 32px 12px 48px 12px;
+    min-height: 774px;
+    min-width: 600px;
+  }
+
+  &__header {
+    font-size: 23px;
+    line-height: 1.5;
+    font-weight: 700;
+    padding: 0 20px;
+  }
+
+  &__cols {
+    display: flex;
+  }
+}
+
+@mixin hoverBtn($bg, $color) {
+  @media (hover) {
+    &:hover {
+      background: $bg;
+      color: $color;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background: $bg;
+      color: $color;
+    }
+  }
+}
+
+.btn {
+  height: 52px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  background: $btn;
+  color: $white;
+  width: 160px;
+  border-radius: 12px;
+  transition: 0.3s;
+  border: none;
+
+  @include hoverBtn($btn__light, $blue);
+
+  &__wrap {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  &__light {
+    background: $btn__light;
+    color: $blue;
+    width: 181px;
+    transition: 0.3s;
+
+    @include hoverBtn($blue, $white);
+  }
+}
